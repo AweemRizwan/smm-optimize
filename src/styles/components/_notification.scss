@@ -1,0 +1,92 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+/* Switch.scss */
+
+.switch {
+  @extend .position-relative, .inline-block;
+  width: 50px;
+  height: 24px;
+
+  input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+
+  .slider {
+      @extend .position-absolute, .cursor-pointer, .top-0, .left-0, .right-0, .bottom-0;
+      background-color: $color-light-gray;
+      transition: 0.4s;
+      border-radius: 34px;
+
+      &:before {
+          @extend .position-absolute, .border-radius-50;
+          content: "";
+          height: 16px;
+          width: 16px;
+          left: 4px;
+          bottom: 4px;
+          background-color: $color-white;
+          transition: 0.4s;
+      }
+  }
+
+  input:checked + .slider {
+      background-color: $color-light-green;
+
+      &:before {
+          transform: translateX(26px);
+      }
+  }
+}
+
+// Notifications Modal Styling
+.notifications-m {
+  @extend .border-radius-10, .right-0;
+  min-height: 260px;
+  top: 100%;
+  width: 100vw;
+  max-width: 28rem;
+  padding: 24px;
+  background: $color-white;
+  border: 1px solid;
+  z-index: 99999;
+
+  .slider-content {
+      font-size: $font-size-base;
+  }
+
+  .all-notifications {
+      padding-top: 20px;
+  }
+
+  .no-new-notification {
+      p {
+          margin-top: 10px;
+      }
+  }
+
+  .notification-card {
+      max-height: 420px;
+      overflow-y: auto;
+  }
+}
+
+// Notification Icon Styling
+.notification-icon-container {
+  svg {
+      color: $color-dark !important;
+
+      &:hover {
+          color: $color-light-orange !important;
+      }
+  }
+}
+
+.notification-details {
+    border-bottom: 1px solid;
+    width: 100%;
+    padding: 10px 0;
+}

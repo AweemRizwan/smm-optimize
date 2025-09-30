@@ -1,0 +1,166 @@
+@use "sass:map";
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Core Button styles
+button,
+.button {
+    @include button-style($color-white, $color-dark, $color-dark); // Default styles (optional)
+}
+
+// Apply styles for each button variant
+@each $variant, $styles in $button-variants {
+    .button-#{$variant} {
+        @if map.has-key($styles, bg) {
+            background-color: map.get($styles, bg);
+        }
+
+        @if map.has-key($styles, text) {
+            color: map.get($styles, text);
+        }
+
+        @if map.has-key($styles, border) {
+            border-color: map.get($styles, border);
+        }
+
+        // Only include hover/focus styles if different from the default
+        @if map.has-key($styles, hover-bg) or map.has-key($styles, hover-border) {
+            @include button-hover(map.get($styles, hover-bg, $default-hover-bg), map.get($styles, hover-border, $default-hover-border));
+        }
+
+        
+    }
+}
+
+h3.plus {
+    font-size: 30px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    background-color: $color-dark;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    line-height: normal;
+    margin-bottom: 5px;
+    align-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+
+    @extend .inline-block, .align-center, .justify-center, .border-radius-50, .no-wrap;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+.primary-outline
+{
+    background-color: none;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover
+    {
+        background-color: $color-primary !important;
+        color: $color-white;
+    }
+}
+
+.icon-plus
+{
+    height: 40px;
+    @extend .d-block;
+}
+
+.primary:hover
+{
+    @extend .bg-none;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+}
+
+.secondary:hover{
+ @extend .bg-none;
+    border: 1px solid $color-accent;
+    // color: $color-accent;
+}
+
+.danger:hover
+{
+    @extend .bg-none;
+    border: 1px solid $color-orange;
+    color: $color-orange !important;
+}
+.dark-oultine
+{
+    @extend .bg-none;
+    border: 1px solid $color-dark;
+    color: $color-dark;
+    
+    &:hover
+    {
+        background: $color-dark;
+        color: $color-white !important;
+    }
+}
+.dark:hover
+{
+    @extend .bg-none;
+    border: 1px solid $color-dark;
+    color: $color-dark;
+}
+
+.kebab-menu-container {
+    @extend .position-absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.kebab-menu-button {
+    @extend .bg-none, .border-none, .cursor-pointer, .d-flex, .justify-center, .align-center;
+    font-size: 18px;
+    padding: 5px;
+    color: $color-dark;
+    width: 32px;
+    height: 32px;
+
+    &.active {
+        color: $color-primary;
+    }
+}
+
+.kebab-menu-dropdown {
+    @extend .position-absolute, .right-0, .border-radius-10, .z-index-1000;
+    top: 40px;
+    background: $color-white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    min-width: 100px;
+
+    button:hover
+    {
+      color: $color-primary;
+    }
+
+}
+
+@media (min-width:1600px) {
+    .fnt-18{
+        font-size: 18px;
+    }
+}
+
+.fnt-16{
+    font-size: 16px !important;
+}
+
+
+.mx-xl-bd{
+    color: $color-dark;
+    border-color: $color-primary !important;
+}
+
+.w8t-app{
+    padding: 10px 5px !important;
+    width: 180px !important;
+}

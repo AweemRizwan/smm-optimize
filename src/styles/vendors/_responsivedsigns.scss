@@ -1,0 +1,38 @@
+// Mobile (max-width: 767px)
+@media (max-width: 767px) {
+    .user-reesponsive {
+        flex-direction: column-reverse;
+        gap: 20px !important;
+    }
+
+    .display-block-mob {
+        display: block;
+    }
+
+    .width-mob-tb {
+        min-width: 250px;
+    }
+}
+
+// Tablet & Small Desktop (768px - 1192px)
+@media (min-width: 768px) and (max-width: 1192px) {
+    .col-gap {
+        column-gap: 5px;
+    }
+
+    .display-1024-block {
+        display: block;
+    }
+}
+
+@media (min-width:1600px) {
+    .nav-links {
+        a {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    }
+    .logout-btn {
+        font-size: 20px;
+    }
+}

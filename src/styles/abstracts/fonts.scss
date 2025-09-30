@@ -1,0 +1,50 @@
+// @font-face {
+//     font-family: 'Publica Sans Round';
+//     src: url('../assets/fonts/PublicaSansRound-Lt.otf') format('opentype');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Publica Sans Round';
+//     src: url('../assets/fonts/PublicaSansRound-Rg.otf') format('opentype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Publica Sans Round';
+//     src: url('../assets/fonts/PublicaSansRound-Md.otf') format('opentype');
+//     font-weight: 500;
+//     font-style: normal;
+// }
+
+
+@font-face {
+    font-family: 'Publica Sans Round';
+    src: url('../../assets/fonts/PublicaSansRound-Lt.woff2') format('woff2'),
+         url('../../assets/fonts/PublicaSansRound-Lt.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'Publica Sans Round';
+    src: url('../../assets/fonts/PublicaSansRound-Rg.woff2') format('woff2'),
+         url('../../assets/fonts/PublicaSansRound-Rg.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'Publica Sans Round';
+    src: url('../../assets/fonts/PublicaSansRound-Md.woff2') format('woff2'),
+         url('../../assets/fonts/PublicaSansRound-Md.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

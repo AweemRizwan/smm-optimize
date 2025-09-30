@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+
+// Links
+a { 
+    font-weight: $font-weight-normal;
+    color: $link-color;
+    text-decoration: inherit;
+}
+
+.text-link {
+    font-weight: $font-weight-normal;
+    color: $color-dark;
+    text-decoration: underline;
+    font-size: $font-normal-base;
+}
+
+@media (max-width:1600px) {
+    .text-link {
+        font-size: $font-size-base;
+    }
+}

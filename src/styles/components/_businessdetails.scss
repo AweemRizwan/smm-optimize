@@ -1,0 +1,65 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.form-group {
+  @extend .d-flex;
+  @extend .flex-direction-column;
+  @extend .position-relative;
+}
+
+.form-check {
+  @extend .d-flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+select#countryCode {
+  @extend .position-absolute;
+  top: 32%;
+  left: 2%;
+  width: 15%;
+  border-width: 0 1px 0 0;
+}
+
+input#businessNumber {
+  padding-left: 114px;
+}
+
+button {
+  &.add-social {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #73C2FB;
+    @extend .border-none;
+    border-radius: 10px;
+    color: $color-white;
+    font-size: 18px;
+  }
+}
+
+.soci {
+  @extend .position-absolute;
+  font-size: 30px;
+  margin-left: 15px;
+  border: 0.5px solid $color-dark;
+  border-width: 0 1px 0 0;
+  padding-right: 15px;
+
+  &-in {
+    padding-left: 50px !important;
+  }
+}
+
+.button-container {
+  @extend .d-flex;
+  @extend .justify-center;
+  @extend .align-center;
+  @extend .width-100; // Ensure the container takes full width
+}
+
+// .social-handle-err {
+//   .field-and-error {
+//     width: 60%;
+//   }
+// }

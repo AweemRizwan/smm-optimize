@@ -1,0 +1,61 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+// Modal Overlay
+.modal-overlay {
+    z-index: 999;
+    @extend .top-0, .left-0, .width-100;
+    border-radius: 18px;
+    padding: 20px;
+    height: 100%;
+}
+
+// Modal Content
+.modal-content {
+    padding: 30px;
+    border-radius: 18px;
+    @extend .width-100, .z-index-1000, .position-relative;
+    color: $color-dark;
+    min-width: 400px;
+    width:688px;
+    height: auto;
+    border: 1px solid $color-light-gray;
+    background: $color-white;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+// Modal Buttons
+.confirm-button {
+    &:hover {
+        background-color: $color-accent;
+        @extend .border-none;
+        color: $color-dark;
+    }
+}
+
+.modal-close-button {
+    @extend .position-absolute, .bg-none, .border-none, .cursor-pointer;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: $color-dark;
+}
+
+// Modal Header
+.modal-head {
+    font-size: 36px;
+    font-weight: 500;
+
+    @media (max-width: 767px) {
+        font-size: $font-normal;
+    }
+}
+
+@media (max-width:1600px) {
+    .modal-content {
+        width:600px;
+    }
+}

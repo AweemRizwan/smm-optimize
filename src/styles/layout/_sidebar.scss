@@ -1,0 +1,91 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as v;
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: v.$color-white;
+    color: v.$color-dark;
+    left: -250px;
+    transition: left 0.3s ease-in-out;
+
+    .close-btn {
+        background: none;
+        font-size: 24px;
+    }
+
+    .user-profile {
+        margin-bottom: 30px;
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            @extend .border-radius-50;
+            margin-bottom: 10px;
+        }
+
+        .user-info {
+            @extend .m-0;
+        }
+
+        .user-icons {
+            margin-top: 10px;
+            @extend .justify-center;
+        }
+    }
+
+    .sidebar-navbar {
+        flex: 1;
+
+        .nav-links {
+            @extend .flex-direction-column;
+            gap: 15px;
+
+            a {
+                background-color: transparent;
+                color: v.$color-dark;
+                @extend .p-0;
+
+                &.active {
+                    color: v.$color-primary;
+                }
+            }
+        }
+
+        .logout-btn {
+            @extend .width-100;
+            margin-top: 10px;
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+    @extend .cursor-pointer;
+    font-size: v.$font-normal;
+}
+
+// Responsive Styles
+@media (max-width: 991px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .sidebar {
+        left: -250px;
+
+        &.open {
+            left: 0;
+        }
+
+        .user-profile {
+            display: block !important;
+            text-align: center;
+        }
+
+        nav.global-navbar {
+            display: block !important;
+            margin-top: 0;
+        }
+    }
+}

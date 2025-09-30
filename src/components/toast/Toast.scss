@@ -1,0 +1,169 @@
+// Toast.scss
+
+// Color variables
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/animations/_keyframes' as *;
+
+
+.toast-container {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 8888;
+  width: auto;
+
+  .toast {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: $color-greyscale-10;
+    overflow: hidden;
+
+    .toast-status-icon {
+      float: left;
+      width: 24px;
+      height: 48px;
+      padding: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $color-greyscale-4;
+      }
+    }
+
+    .toast-content {
+      float: left;
+      padding: 6px 8px;
+      line-height: 1.4;
+      margin-left: 5px;
+
+      span {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        color: $color-greyscale-4;
+      }
+
+      p {
+        margin: 2px 0 0;
+        font-size: 13px;
+        color: $color-greyscale-2;
+        text-align: left;
+      }
+    }
+
+    .toast-close {
+      float: right;
+      width: 36px;
+      height: 36px;
+      margin: 2px 4px 0 0;
+      padding: 4px;
+      background: transparent;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $color-greyscale-4;
+      }
+    }
+
+    .toast-duration {
+      clear: both;
+      height: 3px;
+      background-color: $color-greyscale-8;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: $color-greyscale-5;
+        animation: toastDuration 10s linear forwards;
+      }
+    }
+
+    // Variants
+    &.info {
+      background: $color-info-10;
+
+      .toast-status-icon svg,
+      .toast-close svg {
+        fill: $color-info-4;
+      }
+
+      .toast-content span { color: $color-info-4; }
+      .toast-content p    { color: $color-info-2; }
+
+      .toast-duration {
+        background-color: $color-info-8;
+
+        &::after { background-color: $color-info-4; }
+      }
+    }
+
+    &.success {
+      background: $color-success-10;
+
+      .toast-status-icon svg,
+      .toast-close svg {
+        fill: $color-success-3;
+      }
+
+      .toast-content span { color: $color-success-3; }
+      .toast-content p    { color: $color-success-2; }
+
+      .toast-duration {
+        background-color: $color-success-8;
+
+        &::after { background-color: $color-success-3; }
+      }
+    }
+
+    &.alert {
+      background: $color-alert-10;
+
+      .toast-status-icon svg,
+      .toast-close svg {
+        fill: $color-alert-4;
+      }
+
+      .toast-content span { color: $color-alert-4; }
+      .toast-content p    { color: $color-alert-2; }
+
+      .toast-duration {
+        background-color: $color-alert-8;
+
+        &::after { background-color: $color-alert-4; }
+      }
+    }
+
+    &.error {
+      background: $color-error-10;
+
+      .toast-status-icon svg,
+      .toast-close svg {
+        fill: $color-error-4;
+      }
+
+      .toast-content span { color: $color-error-4; }
+      .toast-content p    { color: $color-error-2; }
+
+      .toast-duration {
+        background-color: $color-error-8;
+
+        &::after { background-color: $color-error-4; }
+      }
+    }
+  }
+}
+
+.filter-grey-black{
+  filter: grayscale(100%);
+}

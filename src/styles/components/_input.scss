@@ -1,0 +1,195 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+// Global Styles for Input Fields and Containers
+.field-and-error {
+    margin-bottom: 12px;
+
+    .field-container {
+        @extend .position-relative;
+        @extend .width-100;
+
+        // Styling for input, textarea, and select fields
+        input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]),
+        textarea,
+        select {
+            @extend .width-100;
+            @extend .d-block;
+            @extend .border-none;
+            padding: 12px 10px;
+            border-radius: 10px;
+            font-family: $font-primary;
+            resize: none;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.border-input {
+                border: 0.5px solid $color-dark-light-2 !important;
+            }
+
+            &::placeholder {
+                color: $color-dark-light-1;
+                font-family: $font-primary;
+                font-family: $font-primary;
+            }
+        }
+    }
+
+    // Nesting for search-input
+    .search-input & {
+        @extend .m-0;
+    }
+}
+
+// Custom Styling for Border Input Fields
+.border-input {
+    padding: 10px;
+    @extend .bg-none;
+    border: 0.5px solid $color-dark-light-2;
+    color: $color-dark-light-1;
+
+
+    &.billing {
+        border: 1.5px solid $color-dark;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 13px;
+        color: $color-dark;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+// Social Handles Styling
+input[id^="socialHandles"][id$="handle"] {
+    margin-bottom: -10px;
+}
+
+// Social Platform Dropdown
+select.form-control.me-2.social-name {
+    width: 50% !important;
+    border: 1px solid $color-dark;
+    border-radius: 10px;
+    height: 45px;
+}
+
+// Styling for Delete Button in Social Handles
+.soical-btn {
+    height: 37px;
+}
+
+.custom-file-upload {
+    @extend .inline-block, .cursor-pointer, .border-none, .text-center;
+    padding: 5px;
+    font-size: $font-size-base;
+    width: 90%;
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $default-hover-bg;
+    }
+
+}
+
+.custom-file-upload input {
+    display: none;
+}
+
+.error-container {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    bottom: -30px !important;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 2rem;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.5rem;
+}
+
+.form-control::-ms-expand {
+    display: none;
+}
+
+.select-options:last-child {
+    border: 0;
+}
+
+.titlt-light {
+    font-weight: 300;
+    color: #1B1B1BCC;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input.monthly-year-input.border-input.react-datepicker-ignore-onclickoutside {
+    &::placeholder {
+        color: rgba(27, 27, 27, 0.2);
+    }
+}
+
+input.month-year-input.border-input {
+    &::placeholder {
+        color: rgba(27, 27, 27, 0.2) !important;
+    }
+}
+
+.slect-options {
+    color: $color-dark;
+}
+
+input[type="radio" i]:focus-visible{
+    outline: none !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: inner-spin-button;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button:hover,
+input[type="number"]::-webkit-outer-spin-button:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+input,
+textarea,
+select{
+    font-family: $font-primary;
+    resize: none;
+}
+
+input:disabled{
+    cursor: not-allowed;
+}

@@ -1,0 +1,20 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.inclusions {
+    select {
+        border: 1px solid $color-dark;
+        @extend .border-radius-10;
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+
+label.d-flex.chk-scochi {
+    gap: 5px;
+}
+
+.plicn {
+    color: $color-dark !important;
+}

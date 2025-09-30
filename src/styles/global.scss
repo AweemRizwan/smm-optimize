@@ -1,0 +1,56 @@
+@use './abstracts/index' as i;   // sab kuch globally available ho jayega
+
+// ✅ Base
+@use './base/root' as *;
+@use './base/typography' as *;
+@use './base/links' as *;
+@use './base/utility' as *;
+
+// ✅ Layout
+@use './layout/grid' as *;
+@use './layout/header' as *;
+@use './layout/sidebar' as *;
+
+// ✅ Components
+@use './components/buttons' as *;
+@use './components/labels' as *;
+@use './components/input' as *;
+@use './components/userProfile' as *;
+@use './components/passwords' as *;
+@use './components/reusableTable' as *;
+@use './components/businessdetails' as *;
+@use './components/plans' as *;
+@use './components/modal' as *;
+@use './components/createplan' as *;
+@use './components/thread' as *;
+@use './components/calendar' as *;
+@use './components/proposals' as *;
+@use './components/strategy' as *;
+@use './components/notification' as *;
+@use './components/customtask' as *;
+
+// ✅ Pages
+@use './pages/CreativeField' as *;
+@use './pages/Auth/UserFlow' as *;
+
+// ✅ Vendors
+@use './vendors/responsivedsigns' as *;
+
+// ✅ Global Reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// ✅ Global Utilities
+.text-danger {
+  color: #ff2800;
+}
+
+body {
+  font-size: 16px;
+  font-family: i.$font-primary;
+  line-height: i.$line-height-base;
+  font-weight: i.$font-weight-light;
+}

@@ -1,0 +1,107 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.Create-plan-set {
+  label.form-label {
+    width: 40%;
+  }
+}
+
+.plan {
+  input {
+    width: 15% !important;
+    padding: 10px !important;
+  }
+}
+
+.plan-card {
+  label {
+    @extend .position-absolute;
+    right: 40%;
+  }
+}
+
+.pri-mon {
+  padding: 10px !important;
+
+  label.form-label {
+    @extend .width-100;
+  }
+}
+
+.search-icon {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: $color-dark;
+  z-index: 1;
+  background: $color-white;
+}
+
+
+
+.dropdown {
+  background-color: $color-white;
+  border: 1px solid $color-dark;
+  @extend .z-index-1000;
+  max-height: 150px; // Adjust height
+  overflow-y: auto; // Enable scrolling if needed
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 170px;
+  border-radius: 10px;
+  top: 75%;
+
+  .dropdown-list {
+    list-style: none;
+    @extend .m-0;
+  }
+
+  .dropdown-item {
+    padding: 5px;
+    @extend .cursor-pointer;
+    border: 0.5px solid #1B1B1B;
+    border-width: 0 0 0.5px 0;
+  }
+}
+
+input#standard_netprice,
+input#advanced_netprice {
+  width: 80px !important;
+}
+
+/* Tablet and mobile screens */
+@media (max-width: 991px) {
+  .Create-plan-set {
+    flex-direction: column; // Switch to column layout for smaller screens
+    align-items: center;
+
+    .col-md-4,
+    .col-md-6 {
+      width: 100%; // Ensure each column takes up full width
+      max-width: 100%;
+    }
+
+    .plan,
+    .add-ons-container {
+      margin-bottom: 20px; // Add some margin for better spacing between sections
+    }
+  }
+
+  // .button-secondary {
+  //   width: 100%; // Make the button full width
+  // }
+
+  .pri-mon {
+    label.form-label {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width:512px) {
+  .plt-add.d-flex.gap-20 {
+    flex-direction: column;
+    gap: 0;
+  }
+}

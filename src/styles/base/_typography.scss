@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/fonts' as *;
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-primary;
+    line-height: $line-height-heading;
+}
+
+
+// h1 specific styles with mixin
+h1 {
+    @include mixins.heading-style(36px, 2.688rem, 400, $color-primary);
+}
+
+// h2 specific styles with mixin
+h2 {
+    @include mixins.heading-style(28px, 2.125rem, 500, $color-dark);
+}
+
+// Additional headings if needed
+h3 {
+    @include mixins.heading-style(24px, 1.875, 400, $color-primary);
+}

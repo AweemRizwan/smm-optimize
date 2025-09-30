@@ -1,0 +1,47 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/variables' as *;
+@use '../../base/utility' as *;
+
+.userflow-container {
+    @include flex-center();
+    height: 100vh;
+    width: 100%;
+
+    .userflow-bx {
+        background: $color-primary;
+        border-radius: 30px;
+        padding: 30px;
+        max-width: 528px;
+        width: 100%;
+
+        h2 {
+            color: $color-white;
+            margin-bottom: 30px;
+            @extend .text-center;
+        }
+
+        .forget-link {
+            color: $color-white;
+            text-decoration: underline;
+            @extend .d-block, .p-0, .bg-none, .border-none, .text-right, .cursor-pointer;
+        }
+
+        .button-secondary {
+            margin: 20px auto 0;
+            @extend .d-block;
+
+            }
+
+        p, 
+        .btn-link {
+            color: $color-white;
+            margin: 0 auto;
+            max-width: max-content;
+            @extend .text-center;
+        }
+
+        .btn-link {
+            margin-top: 30px;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.label-base {
+    font-family: $font-primary;
+    font-weight: $font-weight-light;
+    font-size: $font-normal;
+    line-height: $line-height-base;
+    letter-spacing: 0.5px;
+    // margin-bottom: 5px;
+    @extend .d-block;
+}
+
+.label-white {
+    @extend .label-base;
+    color: $color-white;
+}
+
+.label-dark {
+    @extend .label-base;
+    color: $color-dark;
+}
+
+label{
+    font-family: $font-primary;
+    font-size: $font-normal;
+    line-height: $line-height-base;
+    letter-spacing: 0.5px;
+    font-weight: $font-weight-normal;
+}
+
+@media (min-width:1600px){
+    label{
+        font-family: $font-primary;
+        font-size: $font-normal-base;
+    }
+}

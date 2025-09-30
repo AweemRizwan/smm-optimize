@@ -1,0 +1,105 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.user-profile {
+  @extend .d-flex, .align-center, .d-flex-space-between;
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border: 2px solid $color-light-orange;
+    object-fit: cover
+  }
+
+  .user-info {
+    @extend .d-flex, .flex-direction;
+    margin: 0 40px 0 10px;
+
+    .user-name {
+      font-weight: $font-weight-normal;
+      font-size: $font-medium;
+      color: $color-dark;
+    }
+
+    .user-role {
+      font-size: $font-size-base;
+      color: $color-dark;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  .user-icons {
+    @extend .d-flex, .gap-10;
+    margin-left: auto; // Push icons to the far right
+
+    .icon {
+      font-size: $font-medium;
+      color: $color-dark; // Icon color
+      @extend .cursor-pointer;
+
+      &:hover {
+        color: $color-light-orange; // Hover color
+        @extend .transition-3s;
+      }
+    }
+  }
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border: 5px solid $color-accent;
+  overflow: hidden;
+  @extend .position-relative;
+
+  img {
+    @include image-size;
+  }
+}
+
+.registration {
+  label {
+    color: #fff !important;
+  }
+
+  input {
+    background: #fff !important;
+  }
+
+  .userflow-container {
+    .userflow-bx {
+      h2 {
+        color: #fff;
+        margin-bottom: 10px !important;
+      }
+    }
+  }
+}
+
+
+.agency-url-container {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 8px 16px;
+  font-size: 14px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.agency-url-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-button {
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+
+.copy-button svg {
+  width: 16px;
+  height: 16px;
+}

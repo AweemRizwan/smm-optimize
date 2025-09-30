@@ -1,0 +1,146 @@
+@use "sass:color";
+
+$font-primary: 'Publica Sans Round', system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$font-normal:1rem;
+$font-normal-base:1.25rem;
+$font-size-base-normal:1.125rem;
+$font-medium:1.5rem;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$line-height-base: 1.5rem;
+$line-height-heading: 1;
+$font-style-normal:normal;
+$font-style-bold:bold;
+// Color palette
+$color-primary: #1034A6;
+$color-accent: #FFDD00;
+$color-dark: #1B1B1B;
+$color-white: #fff;
+$color-orange:#F51E09;
+$color-light-orange:#F1812B;
+$color-gray:#6c757d;
+$color-primary-light:#007bff;
+$color-light-green:#4caf50;
+$color-light-gray:#CCC ;
+$cta-accent: #F1812B;
+$category-accent: #73C2FB;
+$color-greyscale-10: #f2f2f2;
+$color-greyscale-8:  #d9d9d9;
+$color-greyscale-5:  #737373;
+$color-greyscale-4:  #595959;
+$color-greyscale-2:  #262626;
+$color-info-10:     #e6f7ff;
+$color-info-8:      #91d5ff;
+$color-info-4:      #1890ff;
+$color-info-2:      #0050b3;
+$color-success-10:  #f6ffed;
+$color-success-8:   #b7eb8f;
+$color-success-3:   #73d13d;
+$color-success-2:   #389e0d;
+$color-alert-10:    #fffbe6;
+$color-alert-8:     #ffe58f;
+$color-alert-4:     #faad14;
+$color-alert-2:     #ad6800;
+$color-error-10:    #fff2f0;
+$color-error-8:     #ffccc7;
+$color-error-4:     #ff4d4f;
+$color-error-2:     #a8071a;
+$color-dark-light-1: #1B1B1BCC;
+$color-dark-light-2: #1B1B1B80;
+// Define color variables
+$blue-bg: #cbd8ff29;
+$yellow-bg: #ffdd0047;
+$box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+// Define breakpoints in variables.scss or wherever you're managing global variables
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+// Link styles
+$link-color: $color-primary;
+$link-hover-color: color.scale($color-primary, $lightness: 10%);
+$default-hover-bg: color.scale($color-primary, $lightness: 10%);
+$default-hover-border: color.scale($color-primary, $lightness: -10%);
+//border
+$border-radius: 20px;
+// Button Variants (Map)
+$button-variants: (
+  primary: (
+    bg: $color-primary,
+    text: #fff,
+    border: $color-primary,
+    hover-bg: color.scale($color-primary, $lightness: -5%),
+    hover-border: color.scale($color-primary, $lightness: 10%)
+  ),
+  primary-light: (
+    bg: #fff,
+    text: $color-primary,
+    border: $color-primary,
+    hover-bg: color.scale($color-primary, $lightness: -5%),
+    hover-border: color.scale($color-primary, $lightness: 10%)
+  ),
+  secondary: (
+    bg: $color-accent,
+    text: $color-dark,
+    border: $color-accent,
+    hover-bg: color.scale($color-accent, $lightness: -5%),
+    hover-border: color.scale($color-accent, $lightness: 10%)
+  ),
+  secondary-light: (
+    bg: #fff,
+    text: $color-dark,
+    border: $color-accent,
+    border-width:1px solid
+  ),
+  success: (
+    bg: #28A745,
+    text: #fff,
+    border: #28A745,
+    hover-bg: color.scale(#28A745, $lightness: -5%),
+    hover-border: color.scale(#28A745, $lightness: 10%)
+  ),
+  warning: (
+    bg: #FF9800,
+    text: #fff,
+    border: #FF9800,
+    hover-bg: color.scale(#FF9800, $lightness: -5%),
+    hover-border: color.scale(#FF9800, $lightness: 10%)
+  ),
+  dark: (
+    bg: #1B1B1B,
+    text: #fff,
+    border: #1B1B1B,
+    hover-bg: color.scale(#1B1B1B, $lightness: -5%),
+    hover-border: color.scale(#1B1B1B, $lightness: 10%)
+  ),
+  danger: (
+    bg: #F51E09,
+    text: #fff,
+    border:#F51E09,
+    hover-bg: color.scale(#F51E09, $lightness: -5%),
+    hover-border: color.scale(#F51E09, $lightness: 10%)
+  ),
+  danger-light: (
+    bg: #fff,
+    text: #F51E09,
+    border:#F51E09,
+  ),
+  accent-2: (
+    bg: #73C2FB,
+    text: #1B1B1B,
+    border:#73C2FB,
+    hover-bg: color.scale(#73C2FB, $lightness: -5%),
+    hover-border: color.scale(#73C2FB, $lightness: 10%)
+  ),
+  accent-2-light: (
+    bg: #fff,
+    text: #1B1B1B,
+    border:#73C2FB,
+    hover-bg: color.scale(#73C2FB, $lightness: -5%),
+    hover-border: color.scale(#73C2FB, $lightness: 10%)
+  )
+);
+

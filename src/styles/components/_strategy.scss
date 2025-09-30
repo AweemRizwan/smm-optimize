@@ -1,0 +1,57 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+.card {
+    &.mb-4 {
+        min-height: 250px;
+        max-height: 400px;
+        border: 0.5px solid $color-gray;
+        border-radius: 20px;
+        padding: 20px;
+        @extend .position-relative;
+        overflow: auto;
+        scrollbar-width: thin;
+        background-color: #bbc9f834; 
+    }
+}
+
+.cards-col {
+    @extend .cursor-pointer;
+}
+
+.modal-content {
+    input.form-control {
+        font-size: 12px;
+        height: 35px;
+        padding: 20px;
+        width: 100%;
+        border-radius: 10px;
+        border: 0.5px solid $color-light-gray;
+    }
+}
+
+.ql-editor {
+    min-height: 150px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    padding-top: 30px;
+    @extend .text-center;
+    text-transform: capitalize;
+}
+
+.note-icon {
+    bottom: 15px;
+    left: 50%;
+    @extend .d-flex, .position-absolute, .gap-10;
+    transform: translateX(-50%);
+}
+
+.card-content {
+    p {
+        font-size: 16px;
+    }
+}

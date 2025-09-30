@@ -1,0 +1,122 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+table {
+    @extend .width-100;
+
+    th {
+        border: 1px solid;
+        background: $color-primary;
+        color: $color-white;
+        border-radius: 10px;
+        font-size: $font-size-base-normal;
+        padding: 6px 7px;
+        font-weight: $font-weight-bold;
+        min-width: 200px;
+        line-height: $line-height-base;
+    }
+
+    td {
+        font-size: $font-size-base;
+        padding: 30px 20px;
+        border-bottom: 0.5px solid $color-dark;
+        @extend .position-relative, .text-center;
+        // text-transform: capitalize;
+    }
+
+    .team-row {
+        border-bottom: 0.5px solid $color-dark;
+    }
+}
+
+.table-btns-desig {
+    border: 0.5px solid;
+    padding: 7px 12px;
+    border-radius: 44px;
+    white-space: nowrap;
+    line-height: $line-height-heading;
+    display: block;
+    width: 100%;
+
+    a.no-in.button-danger-light {
+        &:hover {
+            color: $color-orange;
+            border: 1px solid $color-orange;
+        }
+    }
+}
+
+.team-assigned {
+    @extend .border-none;
+}
+
+.assig-tem {
+    border-color: $color-primary;
+}
+
+.assigned-wrapper {
+    .assigned-label {
+        @extend .position-absolute, .text-center, .border-radius, .left-0, .transition-3s;
+        border: 0.5px solid $color-accent;
+        padding: 6px 12px;
+        top: 100%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:hover .assigned-label {
+        opacity: 1;
+        visibility: visible;
+        @extend .transition-3s;
+    }
+}
+
+.max-height {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.section {
+    >div {
+        scrollbar-width: thin;
+        scrollbar-color: $color-primary transparent;
+    }
+}
+
+.pst-typ {
+    width: 70%;
+}
+
+.pst-sts {
+    width: 30%;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    line-height: $line-height-base;
+}
+
+.assigned-label {
+    font-size: 10px;
+}
+
+.ct-lab-name {
+    font-size: $font-normal;
+}
+
+.planinclusion {
+    max-height: 100px;
+    font-size: 14px;
+    overflow: auto;
+}
+
+@media (max-width:1600px) {
+    table {
+        th {
+            font-size: 14px;
+        }
+    }
+}

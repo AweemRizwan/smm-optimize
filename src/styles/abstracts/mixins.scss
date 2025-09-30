@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/fonts' as *;
+@use '../base/utility' as *;
+// Font smoothing for cross-browser consistency
+@mixin font-smoothing {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Flex center for centering elements
+@mixin flex-center {
+    @extend .d-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Button styles with updated variables
+@mixin button-style($bg-color: $btn-bg-color, $text-color: $btn-text-color, $border-color: $btn-border-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: 44px;
+    border: 1px solid $border-color;
+    padding: 0.5em 2em;
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-normal;
+    font-family: v.$font-primary; // Use the updated font
+    line-height: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+    // Media query for larger screens
+    @media (min-width: 1600px) {
+        font-size: v.$font-size-base-normal;
+    }
+}
+
+@mixin heading-style($font-size, $line-height, $font-weight, $color) {
+    font-style: normal;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+
+// Hover state for buttons with hover colors
+@mixin button-hover($hover-bg: $btn-hover-bg-color, $hover-border: $btn-hover-border-color) {
+    &:hover {
+        background-color: $hover-bg;
+        border-color: $hover-border;
+    }
+}
+
+@mixin button-hover-primary() {
+    background-color: transparent;
+    color: $color-primary;
+    border-color: 0.5px solid $color-primary;
+}
+
+
+@mixin image-size() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @extend .cursor-pointer;
+}
+
+
+// Bootstrap-like breakpoints
+@mixin respond-to($media) {
+    @if $media =='xs' {
+        @media (max-width: 575.98px) {
+            @content;
+        }
+    }
+
+    @else if $media =='sm' {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $media =='md' {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $media =='lg' {
+        @media (min-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $media =='xl' {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}

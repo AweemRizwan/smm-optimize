@@ -1,0 +1,49 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/utility' as *;
+
+img.chat-avatar {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid $color-white;
+    box-shadow: 0px 2px 8.8px 0px #00000029;
+    @extend .border-radius-50;
+}
+
+.chat-window {
+    overflow-y: auto;
+    border-radius: 15px;
+    @extend .flex-grow-1;
+}
+
+.chat-sender-information {
+    font-size: $font-size-base;
+    gap: 5px;
+    margin-left: 60px;
+}
+
+.chat-sender-info {
+    color: #5D5D5D;
+    font-size: 12px;
+}
+
+.chat-message-text {
+    background: $color-white;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0px 2px 8.8px 0px #00000029;
+    border-radius: 19px 19px 19px 0px;
+}
+
+.chat-input-container {
+    border: 1px solid #1B1B1B80;
+    border-radius: 18px;
+    padding: 10px 30px;
+}
+
+.threads-error{
+    top:12px;
+    left:40px;
+}

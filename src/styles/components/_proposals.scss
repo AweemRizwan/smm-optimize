@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.upload-pdf-button {
+    padding: 5px 20px;
+    border: 2px solid $category-accent;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    width: 170px;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+}
+
+.AM-tn {
+    padding: 7px 16px;
+}
