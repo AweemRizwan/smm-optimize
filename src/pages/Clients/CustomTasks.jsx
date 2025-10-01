@@ -131,12 +131,6 @@ const CustomTasks = () => {
                                 ) : teamError ? (
                                     <p className="text-red-500">Error loading team members.</p>
                                 ) : (
-                                    // <FieldAndError as="select" name="assignedTo" customClass="border-input">
-                                    //     <option value="">Assign to...</option>
-                                    //     {teamData?.team_members?.map((member) => (
-                                    //         <option key={member.id} value={member.id}>{member.username}</option>
-                                    //     ))}
-                                    // </FieldAndError>
                                     <SelectField
                                         // label="Select Team"
                                         name="assignedTo"
@@ -159,11 +153,6 @@ const CustomTasks = () => {
                                 onDrop={handleDrop}
                             >
                                 <div className="upload-box mt-5 mb-2">
-                                    {/* <img src={upload} alt="upload" className="upload-icon" />
-                                    <p className="upload-text">
-                                        <strong>Drag and drop your file here</strong>
-                                    </p> */}
-                                    {/* <p className="upload-subtext">Files supported: JPG, PNG, PDF</p> */}
                                     <label htmlFor="file-upload" className="button-primary primary pxy-2 border-radius-10 ">
                                         Browse files
                                     </label>
@@ -176,7 +165,6 @@ const CustomTasks = () => {
                                         onChange={handleFileChange}
                                     />
                                     {file && <p className="file-name">📄 {file.name}</p>}
-                                    {/* <p className="file-size-info">Maximum size: 5MB</p> */}
                                 </div>
                             </div>
 

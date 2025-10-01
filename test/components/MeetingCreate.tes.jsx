@@ -85,33 +85,4 @@ describe('MeetingCreate Component', () => {
         // ✅ Verify success message
         await waitFor(() => expect(screen.getByText(/Meeting created successfully!/i)).toBeInTheDocument());
     });
-
-    // test('Displays error message when API call fails', async () => {
-    //     // ✅ Force API to return an error
-    //     server.use(
-    //         http.post('http://localhost:5000/meetings', (req, res, ctx) => {
-    //             return res(ctx.status(500));
-    //         })
-    //     );
-
-    //     renderMeetingCreate();
-
-    //     // ✅ Wait for API data to load
-    //     await waitFor(() => expect(screen.getByLabelText(/Meeting Name/i)).toBeInTheDocument());
-
-    //     // ✅ Fill out the form
-    //     fireEvent.change(screen.getByLabelText(/Date/i), { target: { value: '2024-02-15' } });
-    //     fireEvent.change(screen.getByLabelText(/Time/i), { target: { value: '10:30' } });
-    //     fireEvent.change(screen.getByLabelText(/Meeting Name/i), { target: { value: 'Project Sync' } });
-    //     fireEvent.change(screen.getByLabelText(/Client/i), { target: { value: '1' } });
-    //     fireEvent.change(screen.getByLabelText(/Meeting Link/i), { target: { value: 'https://meet.google.com/xyz' } });
-    //     fireEvent.change(screen.getByLabelText(/Assignee Type/i), { target: { value: 'team' } });
-
-    //     // ✅ Submit form
-    //     const submitButton = screen.getByText(/Submit/i);
-    //     fireEvent.click(submitButton);
-
-    //     // ✅ Verify error message
-    //     await waitFor(() => expect(screen.getByText(/Failed to create meeting/i)).toBeInTheDocument());
-    // });
 });

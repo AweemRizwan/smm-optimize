@@ -23,11 +23,6 @@
     width: 100%;
     cursor: pointer;
     transition: background-color 0.3s;
-
-    // &:hover,
-    // &.selected {
-    //   background-color: $color-accent;
-    // }
   }
 }
 
@@ -97,7 +92,6 @@
   font-size: $font-size-base;
   margin-top: 4px;
   @extend .position-absolute;
-  // bottom: -20px;
   @extend .left-0;
 }
 

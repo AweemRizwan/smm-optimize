@@ -4,9 +4,6 @@ import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';  
 import { Provider } from 'react-redux';
 import { store } from '../../src/store/store';  // Import the real store
 import LoginForm from '../../src/pages/Auth/LoginForm';  // Adjust path if needed
-// import { createMemoryHistory } from 'history';
-// import { MemoryRouter } from 'react-router-dom';  // Use MemoryRouter for navigation testing
-
 
 
 describe('LoginForm', () => {

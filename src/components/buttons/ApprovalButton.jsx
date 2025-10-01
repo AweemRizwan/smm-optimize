@@ -35,8 +35,4 @@ ApprovalButton.propTypes = {
   className:     PropTypes.string,
 };
 
-// ApprovalButton.defaultProps = {
-//   isReady: true,
-// };
-
 export default ApprovalButton;

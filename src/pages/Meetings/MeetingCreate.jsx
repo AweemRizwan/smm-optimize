@@ -54,7 +54,6 @@ const MeetingCreate = () => {
     return (
         <div className="section">
             <h2 className='mb-5'>Meeting Form</h2>
-            {/* {feedback && <p>{feedback}</p>} */}
 
             <ToastContainer>
                 {successMessage && (

@@ -50,40 +50,6 @@ test('renders user list correctly', async () => {
   });
 });
 
-// test('handles error state', async () => {
-//     server.use(
-//       http.get(`http://localhost:5000${API_ROUTES.USERS.LIST}`, (req, res, ctx) => {
-//         return HttpResponse.json(ctx.status(500), ctx.json({ message: 'Failed to load users.' }));
-//       })
-//     );
-  
-//     renderComponent();
-
-  
-//     // ✅ Wait for the error message to appear
-//     await waitFor(() => {
-//       expect(screen.getByText(/Failed to load users./i)).toBeInTheDocument();
-//     });
-//   });
-  
-
-// test('deletes a user', async () => {
-//   renderComponent();
-
-//   await waitFor(() => {
-//     expect(screen.getByText('John')).toBeInTheDocument();
-//   });
-
-//   const deleteButtons = screen.getAllByText('Delete');
-//   expect(deleteButtons).toHaveLength(2);
-
-//   userEvent.click(deleteButtons[0]);
-
-//   await waitFor(() => {
-//     expect(screen.queryByText('John')).not.toBeInTheDocument();
-//   });
-// });
-
 test('handles delete failure', async () => {
     server.use(
         http.delete(`http://localhost:5000${API_ROUTES.USERS.DELETE(':id')}`, async ({ params }) => {

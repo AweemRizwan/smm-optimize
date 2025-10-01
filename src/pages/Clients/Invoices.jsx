@@ -104,10 +104,7 @@ const Invoices = () => {
                 setErrorMessage("Accountants can only change status from 'Unpaid' to 'Paid'.");
                 return;
             }
-
-            // Safeguard for account managers:
-            // - From 'wait_for_approval': allowed transitions -> 'changes_required' or 'unpaid'
-            // - From 'changes_required': allowed transition -> 'unpaid'
+            
             if (role === 'account_manager') {
                 if (currentStatus === 'wait_for_approval') {
                     if (

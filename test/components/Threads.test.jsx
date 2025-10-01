@@ -47,14 +47,6 @@ describe('ThreadPage Component', () => {
         expect(screen.getByText(/Admin/i)).toBeInTheDocument();
     });
 
-    // test('Displays error message when API fails', async () => {
-    //     renderThreadPage();
-
-    //     await waitFor(() => 
-    //         expect(screen.getByText(/Error loading messages/i)).toBeInTheDocument()
-    //     );
-    // });
-
     test('Allows user to send a message and clears input', async () => {
         renderThreadPage();
         

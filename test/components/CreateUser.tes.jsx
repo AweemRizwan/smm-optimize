@@ -67,37 +67,4 @@ describe('CreateUser Component', () => {
         // ✅ Ensure error message is NOT displayed
         expect(screen.queryByText(/Failed to create user/i)).not.toBeInTheDocument();
     });
-
-    // test('Handles API failure and displays error message', async () => {
-    //     // ✅ Mock API failure response
-    //     server.use(
-    //         http.post('http://localhost:5000/users', async (req, res, ctx) => {
-    //             return res(ctx.status(400), ctx.json({ message: "Failed to create user" }));
-    //         })
-    //     );
-    
-    //     renderCreateUser();
-    
-       
-    //     // ✅ Fill out required fields
-    //     fireEvent.change(screen.getByPlaceholderText(/First Name/i), { target: { value: 'John' } });
-    //     fireEvent.change(screen.getByPlaceholderText(/Last Name/i), { target: { value: 'Doe' } });
-    //     fireEvent.change(screen.getByPlaceholderText(/Email Address/i), { target: { value: 'john@example.com' } });
-
-    //     // ✅ Select Role
-    //     fireEvent.change(screen.getByRole('combobox', { name: /Role/i }), { target: { value: 'marketing_manager' } });
-
-    //     // ✅ Click "Create New User"
-    //     fireEvent.click(screen.getByRole('button', { name: /Create New User/i }));
-
-    //     // ✅ **Wait for the error message to appear**
-    //     await waitFor(() => {
-    //         expect(screen.getByText(/Failed to create user/i)).toBeInTheDocument();
-    //     });
-
-    //     // ✅ Ensure the form is still visible for retry
-    //     expect(screen.getByRole('button', { name: /Create New User/i })).toBeInTheDocument();
-    // });
-    
-    
 });

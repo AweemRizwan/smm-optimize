@@ -32,11 +32,6 @@ const Header = () => {
   const buttonLink = currentNavLink?.buttonLink || '#'
   const allowedRoles = currentNavLink?.buttonRoles || []
 
-  // Determine if button should be shown
-  // const showButton =
-  //   Boolean(currentNavLink) &&
-  //   buttonText &&
-  //   !currentPath.endsWith('/new')
   const showButton =
     Boolean(currentNavLink) &&
     buttonText &&

@@ -18,8 +18,6 @@ const NewPassword = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
 
-    // console.log(token, uid);
-
     const initialValues = {
         password: '',
         confirmPassword: ''

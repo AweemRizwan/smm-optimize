@@ -195,33 +195,4 @@ describe('ClientsPage Component', () => {
     // ✅ Ensure data is removed
     expect(screen.queryByText(/Premium/i)).not.toBeInTheDocument();
   });
-  // it('handles API error gracefully', async () => {
-  //   // 🔥 Override the API call to return an error response
-  //   server.use(
-  //     http.get('http://localhost:5000/clients', async () => {
-  //       return HttpResponse.json({ error: 'Failed to fetch clients' }, { status: 500 });
-  //     })
-  //   );
-  
-  //   render(
-  //     <Provider store={store}>
-  //       <MemoryRouter initialEntries={['/clients']}>
-  //         <Routes>
-  //           <Route path="/clients" element={<ClientsPage />} />
-  //         </Routes>
-  //       </MemoryRouter>
-  //     </Provider>
-  //   );
-  
-  //   // 🛠 Debug the rendered output
-  //   await waitFor(() => {
-  //     screen.debug();
-  //   });
-  
-  //   // ✅ Adjust expectation based on actual rendering
-  //   await waitFor(() => {
-  //     expect(screen.getByText(/error/i)).toBeInTheDocument();
-  //   });
-  // });
-  
 });

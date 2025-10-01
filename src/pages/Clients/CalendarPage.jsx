@@ -236,7 +236,6 @@ const CalendarPage = () => {
         const newPostCount = generateUniquePostCount();
         const newRow = {
             id: `temp-${Date.now()}`, // Use a unique temporary ID for new rows 
-            // date: '',
             date: null,
             post_count: newPostCount.toString(),
             type: '',
@@ -260,18 +259,6 @@ const CalendarPage = () => {
         }
 
         setLocalCalendars((prev) => [...prev, { ...newRow, isNew: true }]);
-        // Remove the animation flag after the animation duration
-        // setTimeout(() => {
-        //     if (newRowRef.current) {
-        //         newRowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        //     }
-
-        //     setLocalCalendars((prev) =>
-        //         prev.map((row) =>
-        //             row.id === newRow.id ? { ...row, isNew: false } : row
-        //         )
-        //     );
-        // }, 100); // Match animation duration
         setTimeout(() => {
             const el = rowRefs.current[newRow.id];
             if (el && typeof el.scrollIntoView === 'function') {
@@ -547,9 +534,6 @@ const CalendarPage = () => {
                 <CreativeModalWrapper
                     row={row}
                     role={role || ''}
-                    // role={role}
-                    // Use handleValueChange callback to update the row field when a file is selected.
-                    // onChange={(value) => handleValueChange(row.id, 'creatives', value)}
                     handleValueChange={handleValueChange}
 
                 />
@@ -565,7 +549,6 @@ const CalendarPage = () => {
                     handleApproval={handleApproval}
                     scopeKey="internal_status"
                     role={role || ''}
-                    // role={role}
                 />
             ),
         },

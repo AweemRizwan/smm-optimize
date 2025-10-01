@@ -40,8 +40,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
                         refresh_token: data.refresh_token
                     }));
                     setTokens(data.access_token, data.refresh_token);
-                    // ✅ Invalidate Profile cache so it refetches
-                    // dispatch(apiSlice.util.invalidateTags(['Profile', 'Clients']));
                     
                 } catch (error) {
                     handleApiError(error, 'Login');

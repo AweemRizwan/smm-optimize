@@ -38,13 +38,6 @@ const CalendarVariables = () => {
         isLoading: isLoadingCTAs,
         refetch: refetchPostCTAs,
     } = useGetPostAttributesByTypeQuery('post_cta');
-    // const [errorMessage, setErrorMessage] = useState(''); // New state for error message
-
-    // const refetchAll = () => {
-    //     refetchPostTypes();
-    //     refetchPostCategories();
-    //     refetchPostCTAs();
-    // };
 
     const toggleStatus = async (id, currentStatus) => {
         try {

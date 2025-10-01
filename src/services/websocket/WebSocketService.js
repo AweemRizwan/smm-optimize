@@ -27,9 +27,6 @@ class WebSocketService {
 
         this.socket.onclose = (event) => {
             console.warn(`WebSocket disconnected. Code: ${event.code}, Reason: ${event.reason}`);
-            // console.log('event', event);
-            // setTimeout(() => this.connect(url, userId), 5000); // Attempt to reconnect after 5 seconds
-            // console.log('Reconnecting in 5 seconds...');
         };
 
         this.socket.onerror = (error) => {

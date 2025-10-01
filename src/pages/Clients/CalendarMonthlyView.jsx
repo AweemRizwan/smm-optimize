@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useFetchClientCalendarQuery } from "../../services/api/calendarMonthlyViewApiSlice";
 import { useUpdateCalendarDateMutation } from "../../services/api/calendarApiSlice";
 import useCurrentUser from "../../hooks/useCurrentUser";
-import Header from '../../layouts/Header/Header'
 import { useState, useEffect } from 'react';
 import {
   ErrorContainer,

@@ -136,15 +136,10 @@ const StatusActionBar = () => {
             setErrorMessage(error?.data?.error || 'Something went wrong');
             setSuccessMessage('');
         }
-        // clearMessages();
     };
 
     return (
         <div className="status-action-bar d-flex gap-20 align-center my-4 wrap">
-
-            {/* {successMessage && <div className="success-container">{successMessage}</div>}
-            {errorMessage && <div className="error-container">{errorMessage}</div>} */}
-
             <ToastContainer>
                 {successMessage && (
                     <SuccessContainer
@@ -168,25 +163,6 @@ const StatusActionBar = () => {
                 Assigned to: <button className='button-secondary-light pointer-none px-3'>{assignedToName || 'No Assignee Available at the Moment'} </button>
             </div>
 
-            {/* Conditionally render the invoice dropdown */}
-            {/* {showInvoiceDropdown && (
-                <div className="invoice-selection">
-                    <label htmlFor="invoice-select">Select Invoice: </label>
-                    <select
-                        id="invoice-select"
-                        value={selectedInvoiceId}
-                        onChange={(e) => setSelectedInvoiceId(e.target.value)}
-                    >
-                        <option value="">-- Select an Invoice --</option>
-                        {invoices.map((invoice) => (
-                            <option key={invoice.id} value={invoice.id}>
-                                {invoice.billing_from} - {invoice.billing_to}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            )} */}
-
             {showInvoiceDropdown && (
                 <SelectField
                     // label="Select Invoice:"
@@ -203,25 +179,6 @@ const StatusActionBar = () => {
                     smallicon="width-1rem"
                 />
             )}
-
-            {/* Conditionally render the calendar dropdown */}
-            {/* {showCalendarDropdown && (
-                <div className="calendar-selection">
-                    <label htmlFor="calendar-select">Select Calendar: </label>
-                    <select
-                        id="calendar-select"
-                        value={selectedCalendarId}
-                        onChange={(e) => setSelectedCalendarId(e.target.value)}
-                    >
-                        <option value="">-- Select a Calendar --</option>
-                        {calendars.map((calendar) => (
-                            <option key={calendar.calendar_id} value={calendar.calendar_id}>
-                                {calendar.month_name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            )} */}
 
             {showCalendarDropdown && (
                 <div className="calendar-selection">

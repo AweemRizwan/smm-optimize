@@ -28,7 +28,6 @@ function App() {
   const refreshToken = getRefreshToken();
 
   // Optionally, use an RTK Query hook to fetch the profile
-  // const { data: profileData, refetch: fetchProfile } = useGetProfileQuery(null, { skip: !accessToken && !refreshToken });
   const { data: profileData, refetch: fetchProfile } = useGetProfileQuery(null, {
     skip: !(accessToken || refreshToken), // ✅ correct condition
   });

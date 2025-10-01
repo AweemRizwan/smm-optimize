@@ -22,9 +22,7 @@ const BusinessDetails = () => {
     const { client: clientData, isLoading, isError, error } = useClientData();
 
     const handleSubmit = async (values) => {
-        // console.log("Submitting Values:", values);
         const snakeCaseValues = convertToSnakeCase(values);
-        // console.log("Converted to Snake Case:", snakeCaseValues);
 
         const services = values.services || [];
         snakeCaseValues.client_type =

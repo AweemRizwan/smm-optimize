@@ -37,14 +37,6 @@ describe('Meetings Component', () => {
             expect(await screen.findByTestId('skeleton-loader')).toBeInTheDocument();
     });
 
-    // test('Displays error message when API call fails', async () => {
-    //     renderMeetings();
-
-    //     await waitFor(() => {
-    //         expect(screen.getByText(/Failed to load meetings/i)).toBeInTheDocument();
-    //     });
-    // });
-
     test('Renders meeting data correctly', async () => {
       renderMeetings();
     

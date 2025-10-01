@@ -23,34 +23,3 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
-
-
-// import { configureStore } from "@reduxjs/toolkit"
-// import authReducer from '../features/auth/authSlice'
-// import { apiSlice } from "../services/api/apiSlice"
-// import notificationsReducer from '../features/notifications/notificationsSlice';
-
-
-// export const store = configureStore({
-//     reducer: {
-//         auth: authReducer,
-//         [apiSlice.reducerPath]: apiSlice.reducer,
-//         notifications: notificationsReducer,
-//     },
-//     middleware: (getDefaultMiddleware) =>
-//         getDefaultMiddleware().concat(apiSlice.middleware),
-// });
-
-// // ✅ Add `setupStore` to create a fresh store for testing
-// export const setupStore = () =>
-//     configureStore({
-//         reducer: {
-//             auth: authReducer,
-//             [apiSlice.reducerPath]: apiSlice.reducer,
-//             notifications: notificationsReducer,
-//         },
-//         middleware: (getDefaultMiddleware) =>
-//             getDefaultMiddleware().concat(apiSlice.middleware),
-//     });
-
-// export default store;

@@ -126,38 +126,6 @@ describe('CalendarVariables Component', () => {
         fireEvent.click(screen.getByRole('button', { name: /×/i }));
         await waitFor(() => expect(screen.queryByRole('heading', { name: /Add Post CTA/i })).not.toBeInTheDocument());
     });
-
-    // test('Creates a new post attribute successfully', async () => {
-    //     renderCalendarVariables();
-    
-    //     // ✅ Click "Add Post Type" button
-    //     fireEvent.click(screen.getByRole('button', { name: /Add Post Type/i }));
-    
-    //     // ✅ Verify modal is open
-    //     expect(await screen.findByRole('heading', { name: /Add Post Type/i })).toBeInTheDocument();
-    
-    //     // ✅ Enter new post type name
-    //     fireEvent.change(screen.getByPlaceholderText(/Post Type/i), { target: { value: 'Case Study' } });
-    
-    //     // ✅ Select Status as "Inactive"
-    //     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Inactive' } });
-    
-    //     // ✅ Click "Create"
-    //     fireEvent.click(screen.getByRole('button', { name: /Create/i }));
-    
-    //     // ✅ **Wait for the modal to close**
-    //     await waitFor(() => {
-    //         expect(screen.queryByRole('heading', { name: /Add Post Type/i })).not.toBeInTheDocument();
-    //     });
-    
-    //     // ✅ **Wait for the new post type to appear in the UI**
-    //     await waitFor(() => {
-    //         expect(screen.getByText(/Case Study/i)).toBeInTheDocument();
-    //     });
-    
-    //     // ✅ Ensure the correct status is displayed
-    //     expect(screen.getByText(/Inactive/i)).toBeInTheDocument();
-    // });
     
     test('Toggles post type status', async () => {
         renderCalendarVariables();
@@ -192,35 +160,4 @@ describe('CalendarVariables Component', () => {
             expect(toggleButton).toHaveTextContent('Active'); // ✅ Status should remain unchanged
         });
     });
-
-    // test('Displays error when creating post attribute fails', async () => {
-    //     server.use(
-    //         http.post(`http://localhost:5000${API_ROUTES.POST_ATTRIBUTES.LIST_CREATE}`, (req, res, ctx) => {
-    //             return res(ctx.status(500)); // Simulate API failure
-    //         })
-    //     );
-    
-    //     renderCalendarVariables();
-    
-    //     // ✅ Open the modal
-    //     fireEvent.click(screen.getByRole('button', { name: /Add Post Type/i }));
-    
-    //     // ✅ Ensure modal opens
-    //     expect(await screen.findByRole('heading', { name: /Add Post Type/i })).toBeInTheDocument();
-    
-    //     // ✅ Fill in post type name
-    //     fireEvent.change(screen.getByPlaceholderText(/Post Type/i), { target: { value: 'New Type' } });
-    
-    //     // ✅ Click "Create"
-    //     fireEvent.click(screen.getByRole('button', { name: /Create/i }));
-    
-    //     // ✅ **Wait for the error message to appear**
-    //     await waitFor(() => {
-    //         expect(screen.getByText(/Failed to create post attribute/i)).toBeInTheDocument();
-    //     });
-    
-    //     // ✅ Ensure the modal remains open on failure
-    //     expect(screen.getByRole('heading', { name: /Add Post Type/i })).toBeInTheDocument();
-    // });
-    
 });
